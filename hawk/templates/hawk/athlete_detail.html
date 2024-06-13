@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ athlete.name }}</title>
+</head>
+
+<body>
+    <h1>{{ athlete.name }}</h1>
+    <img src="{{ athlete.photo.url }}" alt="{{ athlete.name }}" style="width: 200px; height: 200px; object-fit: cover;">
+    <p>{{ athlete.bio }}</p>
+    <a href="{% url 'ourteam' %}">Back to team</a>
+</body>
+
+</html>

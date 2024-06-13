@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Our Team</title>
+    <style>
+        .athlete {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .athlete img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Our Team</h1>
+    <div>
+        {% for athlete in athletes %}
+        <div class="athlete">
+            <a href="{% url 'athlete_detail' athlete.id %}">
+                <img src="{{ athlete.photo.url }}" alt="{{ athlete.name }}">
+                <p>{{ athlete.name }}</p>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
+
+{% endblock content %}

@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    font-family: Arial;
+    border: border-box;
+}
+
+.navbar {
+    background-color: #FF204E;
+    height: 80px;  
+}
+
+.black-ops-one-regular, #hawk-logo{
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+
+    text-decoration: none;
+    color: #00224D;
+  }
+.logo {
+    display: block;
+    text-align: center;
+  }
+
+.sub-navbar {
+    background-color: #F6F6F6;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+}
+
+.nav-item {
+    color: #00224D;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: 1000;
+    font-size: 20px;
+  }
+
+  .nav-item:hover {
+    background-color: #cac8c8;
+    color: black;
+  }
+
+  .nav-itemm {
+    color: #ff204e;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: 1000;
+    font-size: 20px;
+
+}

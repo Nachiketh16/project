@@ -1,0 +1,34 @@
+{% load static %}
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1><a id="hawk-logo" href="/">HAWK ATHLETIC CLUB</a></h1>
+            </div>
+        </div>
+
+        <div class="sub-navbar">
+            <div class="nav-left">
+                <a href="/" class="nav-item">HOME</a>
+                <a href="{% url 'about' %}" class="nav-item">ABOUT</a>
+                <a href="{% url 'trainning' %}" class="nav-item">TRAINING</a>
+                <a href="{% url 'ourteam' %}" class="nav-item">OUR TEAM</a>
+            </div>
+
+            <div class="nav-right">
+                {% if user.is_authenticated %}
+                <h5 class="nav-itemm"> Hello, {{ user.first_name }} {{ user.last_name }}</h5>
+
+                <div class="nav-left">
+                    <a href="/" class="nav-item">workouts&diet</a>
+                </div>
+                <a href="{% url 'logout' %}" class="nav-item">logout</a>
+                {% else %}
+                <a href="{% url 'register' %}" class="nav-item">REGISTER</a>
+                <a href="{% url 'login' %}" class="nav-item">LOGIN</a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+</body>

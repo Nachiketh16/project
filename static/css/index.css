@@ -1,0 +1,21 @@
+.hero-section {
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    color: #fff;
+    padding-top: 400px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
