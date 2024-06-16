@@ -1,5 +1,133 @@
 {% extends 'index.html' %}
 
 {% block content %}
-<h1>helo</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Hawk Athletic Club</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        section {
+            background: #fff;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .coach {
+            display: flex;
+            align-items: center;
+        }
+
+        .coach img {
+            border-radius: 50%;
+            margin-right: 20px;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        blockquote {
+            background: #f9f9f9;
+            border-left: 10px solid #333;
+            margin: 20px 0;
+            padding: 10px 20px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>Welcome to the Hawk Athletic Club, a platform to excel in the field of professional track and field with
+            internationally trained and certified coaches. Our club is dedicated to nurturing athletic talent and
+            helping individuals reach their full potential. Whether you are a beginner or an elite athlete, we provide
+            the support and resources needed to achieve your goals.</p>
+    </section>
+
+    <section id="mission-statement">
+        <h2>Mission Statement</h2>
+        <p>Our mission is to inspire and guide young Indian athletes on their journey in athletics, helping them perform
+            on leading world stages.</p>
+    </section>
+
+    <section id="history">
+        <h2>History</h2>
+        <p>Founded in 2016, the Hawk Athletic Club was established with the purpose of providing a structured
+            environment for athletes to develop their skills and compete at national and international levels. Since our
+            inception, we have seen numerous athletes achieve significant milestones, including national and
+            international achievements.</p>
+    </section>
+
+    <section id="values-philosophy">
+        <h2>Values and Philosophy</h2>
+        <p><strong>Core Values:</strong> Integrity, Excellence, Dedication, and Sportsmanship.</p>
+        <p><strong>Philosophy:</strong> At Hawk Athletic Club, we believe in holistic development through rigorous
+            training, fair competition, and active community involvement. We aim to foster a supportive and challenging
+            environment where athletes can thrive and contribute positively to society.</p>
+    </section>
+
+    <section id="programs-activities">
+        <h2>Programs and Activities</h2>
+        <p>We offer a variety of programs including athletics, fitness, and strength and conditioning. Our programs
+            cater to all age groups and are designed to accommodate different levels of competition.</p>
+    </section>
+
+    <section id="coaching-staff">
+        <h2>Coaching Staff</h2>
+        <div class="coach">
+            <img src="coach-deepak.jpg" alt="Coach Deepak Rathina">
+            <p><strong>Deepak Rathina</strong><br>IAAF Coach, National and International Athlete. Former All India
+                University record holder in 400mts and consecutive championships.</p>
+        </div>
+    </section>
+
+    <section id="membership">
+        <h2>Membership Information</h2>
+        <p>We offer various membership types to suit different needs and preferences. Our membership fee is ₹2000 per
+            month. Members benefit from access to all club facilities, personalized training programs, and the
+            opportunity to participate in exclusive events and competitions.</p>
+        <p>We also offer trials and introductory sessions for new members to experience our programs before committing
+            to a membership.</p>
+    </section>
+
+    <section id="success-stories">
+        <h2>Success Stories and Testimonials</h2>
+        <p>Our athletes have reached incredible heights, with many achieving national and international recognition. One
+            of our proudest moments was when a member won the gold medal at the Asian Games.</p>
+        <blockquote>"Joining Hawk Athletic Club was the best decision I ever made. The coaching staff is exceptional,
+            and the community is incredibly supportive." - Anjali Kumar, Club Member</blockquote>
+    </section>
+
+    <section id="future-plans">
+        <h2>Future Plans</h2>
+        <p>We are continuously working to expand our facilities and programs. Our upcoming projects include the
+            construction of a new indoor training center and the introduction of specialized training camps. Stay tuned
+            for exciting events and initiatives that will further enhance our offerings and support our athletes'
+            growth.</p>
+    </section>
+</body>
+
+</html>
+
 {% endblock content %}

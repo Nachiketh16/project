@@ -24,6 +24,8 @@
                     <a href="/" class="nav-item">workouts&diet</a>
                 </div>
                 <a href="{% url 'logout' %}" class="nav-item">logout</a>
+                <a href="{% url 'mark' %}" class="nav-item">attendance</a>
+
                 {% else %}
                 <a href="{% url 'register' %}" class="nav-item">REGISTER</a>
                 <a href="{% url 'login' %}" class="nav-item">LOGIN</a>

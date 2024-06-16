@@ -1,14 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
-from .models import heroImage, Updates, Athlete
+from .models import heroImage, Athlete, News, training
 
 ######################################################################################################################################################################################################
 ######################################################################################################################################################################################################
 def home(request):
     hero_selection = heroImage.objects.first()
-    context = {'hero_section': hero_selection}
-    return render(request,'index.html', context)
+    latest_news = News.objects.all()
+    context = {'hero_section': hero_selection,'latest_news': latest_news}
+    return render(request,'hawk/home.html', context)
 
 
 ######################################################################################################################################################################################################
@@ -31,7 +32,7 @@ def registerPage(request):
                 return redirect('register')
             else:
                 user= User.objects.create_user(username = username, password = passwrord1, email = email, first_name = first_name, last_name = last_name)
-                user.save();
+                user.save()
                 messages.info(request, "user created")
                 return redirect('login')
 
@@ -87,7 +88,9 @@ def ourTeam(request):
 ######################################################################################################################################################################################################
 ######################################################################################################################################################################################################
 def trainning(request):
-    return render(request,'hawk/trainning.html')
+    train = training.objects.all ()
+
+    return render(request,'hawk/trainning.html',{'train': train})
 
 
 ######################################################################################################################################################################################################

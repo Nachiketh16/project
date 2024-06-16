@@ -7,27 +7,47 @@
 <head>
     <title>Our Team</title>
     <style>
+        .team {
+            text-align: center;
+            padding: 20px;
+        }
+
         .athlete {
             display: inline-block;
-            margin: 10px;
+            margin: 50px;
             text-align: center;
         }
 
         .athlete img {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 50%;
+            border-radius: 0%;
+        }
+
+        .details {
+            text-decoration: none;
+            color: black;
+            font-weight: 700;
+            font-size: 20px;
+            display: block;
+
+        }
+
+        .details:hover {
+            background-color: #ff204e;
+            color: #070001;
+            opacity: 0.4;
         }
     </style>
 </head>
 
 <body>
-    <h1>Our Team</h1>
+    <h1 class="team">Our Team</h1>
     <div>
         {% for athlete in athletes %}
         <div class="athlete">
-            <a href="{% url 'athlete_detail' athlete.id %}">
+            <a class="details" href="{% url 'athlete_detail' athlete.id %}">
                 <img src="{{ athlete.photo.url }}" alt="{{ athlete.name }}">
                 <p>{{ athlete.name }}</p>
             </a>

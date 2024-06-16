@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<div class="hero-section" style="background-image: url('{{ hero_section.background_image.url }}');">
+    <div class="hero-content">
+        <h1>{{ hero_section.title }}</h1>
+        <p>{{ hero_section.subtitle }}</p>
+        <!-- Add more content if needed -->
+    </div>
+</div>
+
+<h1 class="news">Latest News</h1>
+<ul>
+    {% for latest_news in latest_news %}
+    <li>
+        <img src="{{ latest_news.photo.url }}" alt="">
+        <!-- <a href="/">{{ latest_news.photo }}</a> -->
+        <p>{{ latest_news.content }}</p>
+    </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock content %}
