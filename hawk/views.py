@@ -98,3 +98,35 @@ def trainning(request):
 def athlete_detail_view(request, athlete_id):
     athlete = get_object_or_404(Athlete, id=athlete_id)
     return render(request, 'hawk/athlete_detail.html', {'athlete': athlete})
+
+
+######################################################################################################################################################################################################
+######################################################################################################################################################################################################
+def member(request):
+    return render(request, 'hawk/member.html')
+
+
+
+
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from .models import PDFFile
+from .forms import PDFUploadForm
+
+@login_required
+def upload_pdf(request):
+    if request.method == 'POST':
+        form = PDFUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            pdf = form.save(commit=False)
+            pdf.user = request.user
+            pdf.save()
+            return redirect('pdf_list')
+    else:
+        form = PDFUploadForm()
+    return render(request, 'hawk/upload_pdf.html', {'form': form})
+
+@login_required
+def pdf_list(request):
+    pdfs = PDFFile.objects.filter(user=request.user).order_by('-uploaded_at')
+    return render(request, 'hawk/pdf_list.html', {'pdfs': pdfs})

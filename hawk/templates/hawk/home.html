@@ -1,25 +1,94 @@
 {% extends 'index.html' %}
-{% load static %}
-
 {% block content %}
-<div class="hero-section" style="background-image: url('{{ hero_section.background_image.url }}');">
-    <div class="hero-content">
-        <h1>{{ hero_section.title }}</h1>
-        <p>{{ hero_section.subtitle }}</p>
-        <!-- Add more content if needed -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .news-item {
+            background-color: #f9f9f9;
+            border-radius: 2px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .news-item:hover {
+            transform: scale(1.05);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-title {
+            padding: 15px;
+            font-size: 1.2em;
+            background-color: #ff6f61;
+            color: white;
+        }
+
+        .head {
+            padding: 2%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <div class="hero-section" style="background-image: url('{{ hero_section.background_image.url }}');">
+        <div class="hero-content">
+            <h1>{{ hero_section.title }}</h1>
+            <p>{{ hero_section.subtitle }}</p>
+            <!-- Add more content if needed -->
+        </div>
     </div>
-</div>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <h1 class="head">Latest News</h1>
+    <hr>
+    <div class="news-grid">
+        {% for latest_news in latest_news %}
+        <div class="news-item">
+            <img src="{{latest_news.photo.url }}" alt="{{ news.title }}" class="news-image">
+            <div class="news-title">{{ latest_news.content }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
 
-<h1 class="news">Latest News</h1>
-<ul>
-    {% for latest_news in latest_news %}
-    <li>
-        <img src="{{ latest_news.photo.url }}" alt="">
-        <!-- <a href="/">{{ latest_news.photo }}</a> -->
-        <p>{{ latest_news.content }}</p>
-    </li>
-    {% endfor %}
-</ul>
-
-
+</html>
 {% endblock content %}

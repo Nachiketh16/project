@@ -21,10 +21,11 @@
                 <h5 class="nav-itemm"> Hello, {{ user.first_name }} {{ user.last_name }}</h5>
 
                 <div class="nav-left">
-                    <a href="/" class="nav-item">workouts&diet</a>
+                    <a href="pdfs/upload/" class="nav-item">workouts&diet</a>
                 </div>
-                <a href="{% url 'logout' %}" class="nav-item">logout</a>
+
                 <a href="{% url 'mark' %}" class="nav-item">attendance</a>
+                <a href="{% url 'logout' %}" class="nav-item">logout</a>
 
                 {% else %}
                 <a href="{% url 'register' %}" class="nav-item">REGISTER</a>
