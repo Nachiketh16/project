@@ -2,58 +2,84 @@
 
 {% block content %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Our Team</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Hawk Athletic Club</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
         .team {
             text-align: center;
-            padding: 20px;
+            padding: 40px 0;
+        }
+
+        .team h1 {
+            margin-bottom: 40px;
+            color: #d9534f;
         }
 
         .athlete {
             display: inline-block;
-            margin: 50px;
+            margin: 20px;
             text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .athlete:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
         .athlete img {
             width: 200px;
             height: 200px;
             object-fit: cover;
-            border-radius: 0%;
+            border-radius: 50%;
+            margin-bottom: 10px;
         }
 
         .details {
             text-decoration: none;
-            color: black;
+            color: #444;
             font-weight: 700;
             font-size: 20px;
             display: block;
-
         }
 
         .details:hover {
-            background-color: #ff204e;
-            color: #070001;
-            opacity: 0.4;
+            color: #d9534f;
         }
     </style>
 </head>
 
 <body>
-    <h1 class="team">Our Team</h1>
-    <div>
-        {% for athlete in athletes %}
-        <div class="athlete">
-            <a class="details" href="{% url 'athlete_detail' athlete.id %}">
-                <img src="{{ athlete.photo.url }}" alt="{{ athlete.name }}">
-                <p>{{ athlete.name }}</p>
-            </a>
+
+
+    <div class="team">
+        <h1>OUR TEAM</h1>
+        <div>
+            {% for athlete in athletes %}
+            <div class="athlete">
+                <a class="details" href="{% url 'athlete_detail' athlete.id %}">
+                    <img src="{{ athlete.photo.url }}" alt="{{ athlete.name }}">
+                    <p>{{ athlete.name }}</p>
+                </a>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
+
+
 </body>
 
 </html>

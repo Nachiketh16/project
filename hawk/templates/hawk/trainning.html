@@ -8,29 +8,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .training {
-            text-align: center;
-            padding: 3%;
-        }
-
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+            color: #d9534f;
+            text-align: center;
+        }
+
+        .training {
+            text-align: center;
+            padding: 40px 0;
+            color: #d9534f;
         }
 
         .training-container {
             width: 80%;
-            margin: 0 auto;
+            margin: 20px auto;
             padding: 20px;
             background-color: #fff;
+            border-radius: 8px;
         }
 
         .program {
             display: flex;
             align-items: center;
             margin: 20px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .program:hover {
+            transform: translateY(-5px);
         }
 
         .program img {
@@ -38,7 +55,7 @@
             height: 180px;
             object-fit: cover;
             margin-right: 20px;
-            border-radius: px;
+            border-radius: 8px;
         }
 
         .program-details {
@@ -47,43 +64,39 @@
 
         .program-details h2 {
             margin: 0 0 10px;
-            color: #FF204E;
+            color: #d9534f;
         }
 
         .program-details p {
-            margin: 0;
-            color: #00224D;
+            margin: 0 0 10px;
+            color: #666;
             font-weight: 600;
         }
 
-        .sess {
+        .sess,
+        .member {
             text-decoration: none;
+            color: #d9534f;
+            font-weight: bold;
+        }
+
+        .sess:hover,
+        .member:hover {
+            color: #c9302c;
         }
     </style>
 </head>
 
 <body>
+    <br>
+    <br>
+    <h1>OUR TRAINING SESSIONS</h1>
 
-    <h1 class="training"> OUR TRAINING SESSIONS</h1>
-
-    {% for trainn in train %}
-
-    <!-- <div class="sessions">
-        <table>
-            <tr>
-                <th><a class="sess-title" href="/">{{ trainn.title }}</a></th>
-                <th><a href="/"><img class="session-img" src="{{ trainn.photo.url }}" alt=""></a></th>
-            </tr>
-        </table>
-    </div> 
-    <div class="sessions" style="background-image: url('{{ trainn.photo.url }}')">
-
-    </div>-->
 
     <div class="training-container">
-        <!-- <h1>Our Training Programs</h1> -->
+        {% for trainn in train %}
         <div class="program">
-            <a href="#"><img src="{{ trainn.photo.url }}" alt="Athletics"></a>
+            <a href="#"><img src="{{ trainn.photo.url }}" alt="{{ trainn.title }}"></a>
             <div class="program-details">
                 <a class="sess" href="#">
                     <h2>{{ trainn.title }}</h2>
@@ -96,8 +109,8 @@
                 </a>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </body>
 
 </html>

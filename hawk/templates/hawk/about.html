@@ -10,32 +10,34 @@
     <title>About Us - Hawk Athletic Club</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        header h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-
         section {
             background: #fff;
-            margin: 20px;
-            padding: 20px;
+            margin: 20px auto;
+            padding: 40px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
         }
 
         h2 {
-            color: #333;
-            margin-bottom: 10px;
+            color: #d9534f;
+            margin-bottom: 20px;
         }
 
         p {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            line-height: 1.6;
             color: #666;
         }
 
         .coach {
             display: flex;
             align-items: center;
+            margin-bottom: 30px;
         }
 
         .coach img {
@@ -47,22 +49,57 @@
         }
 
         blockquote {
-            background: #f9f9f9;
-            border-left: 10px solid #333;
+            background: #d9534f;
+            border-left: 10px solid #c9302c;
             margin: 20px 0;
-            padding: 10px 20px;
-            color: #555;
+            padding: 20px;
+            color: #fff;
+            font-style: italic;
+            border-radius: 8px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #c9302c;
+        }
+
+        .membership-benefits {
+            list-style: none;
+            padding: 0;
+        }
+
+        .membership-benefits li {
+            background: #d9534f;
+            color: #fff;
+            margin-bottom: 10px;
+            padding: 12px;
+            border-radius: 8px;
         }
     </style>
 </head>
 
 <body>
+
     <section id="introduction">
         <h2>Introduction</h2>
-        <p>Welcome to the Hawk Athletic Club, a platform to excel in the field of professional track and field with
-            internationally trained and certified coaches. Our club is dedicated to nurturing athletic talent and
-            helping individuals reach their full potential. Whether you are a beginner or an elite athlete, we provide
-            the support and resources needed to achieve your goals.</p>
+        <p>Welcome to the Hawk Athletic Club, a platform to excel in professional track and field with internationally
+            trained and certified coaches. Our club is dedicated to nurturing athletic talent and helping individuals
+            reach their full potential. Whether you are a beginner or an elite athlete, we provide the support and
+            resources needed to achieve your goals.</p>
+        <a href="{% url 'member' %}" class="cta-button">Join Us</a>
+        <!-- <a class="member" href=""></a> -->
     </section>
 
     <section id="mission-statement">
@@ -73,10 +110,9 @@
 
     <section id="history">
         <h2>History</h2>
-        <p>Founded in 2016, the Hawk Athletic Club was established with the purpose of providing a structured
-            environment for athletes to develop their skills and compete at national and international levels. Since our
-            inception, we have seen numerous athletes achieve significant milestones, including national and
-            international achievements.</p>
+        <p>Founded in 2016, the Hawk Athletic Club was established to provide a structured environment for athletes to
+            develop their skills and compete at national and international levels. Since our inception, we have seen
+            numerous athletes achieve significant milestones, including national and international achievements.</p>
     </section>
 
     <section id="values-philosophy">
@@ -107,8 +143,14 @@
         <p>We offer various membership types to suit different needs and preferences. Our membership fee is ₹2000 per
             month. Members benefit from access to all club facilities, personalized training programs, and the
             opportunity to participate in exclusive events and competitions.</p>
+        <ul class="membership-benefits">
+            <li>Access to all club facilities</li>
+            <li>Personalized training programs</li>
+            <li>Exclusive events and competitions</li>
+        </ul>
         <p>We also offer trials and introductory sessions for new members to experience our programs before committing
             to a membership.</p>
+        <a href="#contact" class="cta-button">Contact Us</a>
     </section>
 
     <section id="success-stories">
@@ -126,6 +168,8 @@
             for exciting events and initiatives that will further enhance our offerings and support our athletes'
             growth.</p>
     </section>
+
+
 </body>
 
 </html>
