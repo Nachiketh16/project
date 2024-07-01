@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'sportsclub.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hawkdb',
+        'NAME': 'sportsclub',
         'USER': 'postgres',
-        'PASSWORD': '9902816128',
+        'PASSWORD': 'gothilla$123',
         'HOST': 'localhost',
         'PORT': '5432',
     }
